@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+    <style>
+      .parent
+      {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* transform: translate(0,5%); */
+        background-image: linear-gradient(to right, rgb(88, 88, 88), rgb(230, 230, 230));
+      }
+
+      #child
+      {
+        width: 50%;
+      }
+
+      i
+      { 
+        margin-left: -40px;
+        cursor: pointer;
+
+      }
+
+      .passInput
+      {
+        display: flex; align-content: center; align-items: center;
+      }
+
+      #subBtn
+      {
+        border: 0ch;
+        border-radius: 5px;
+        background-color: rgba(0, 128, 0, 0.302);
+        width: 50%;
+        height: 40px;
+      }
+
+    </style>
+
+<script src="https://kit.fontawesome.com/d94d3d35d6.js" crossorigin="anonymous">
+</script>
+
+</head>
+<body style="background-color: grey;">
+
+    <div class="parent">
+    <div class="bg-light p-30 mb-5" id="child" >
+        <center>
+            <h2>Sign up</h2><br>
+        </center>
+        <form action="../index.html" style="justify-content: center;" onsubmit="return signupBtn()">
+        <div class="row">
+        <div class="col-md-6 form-group">
+            <label>First Name</label>
+            <input class="form-control"  title="please enter first name!" id="fname" required type="text" placeholder="John">
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Last Name</label>
+            <input class="form-control" id="lname" required type="text" placeholder="Doe">
+        </div>
+        <div class="col-md-6 form-group">
+            <label>E-mail</label>
+            <input class="form-control" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Invalid email" required type="email" placeholder="example@email.com">
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Mobile No</label>
+            <input class="form-control" pattern="(01[0-9]).{11}" title="Invalid phone number" id="phoneNum" required type="number" placeholder="+02">
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Password</label>
+            <div class="passInput">
+            <input id="pass" class="form-control"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required type="password" >
+            <i id="passI" class="fa-solid fa-eye-slash" onclick="changeVisible(this)"></i>
+            </div>
+        </div>
+        <div class="col-md-6 form-group" >
+            <label>Repeat Password</label>
+            <div class="passInput" >
+            <input id="repass" class="form-control" required type="password">
+            <i id="repassI" class="fa-solid fa-eye-slash" onclick="changeVisible(this)"></i>
+            </div>
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Address Line 1</label>
+            <input class="form-control" id="address1" required type="text" placeholder="123 Street">
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Address Line 2</label>
+            <input class="form-control" id="address2" type="text" placeholder="123 Street">
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Country</label>
+            <select class="custom-select" id="country">
+                <option selected>United States</option>
+                <option>Afghanistan</option>
+                <option>Albania</option>
+                <option>Algeria</option>
+                <option>Egypt</option>
+            </select>
+        </div>
+        <div class="col-md-6 form-group">
+            <label>City</label>
+            <input class="form-control" required id="city" type="text" placeholder="New York">
+        </div>
+        <div class="col-md-6 form-group">
+            <label>State</label>
+            <input class="form-control" required id="state" type="text" placeholder="New York">
+        </div>
+        <div class="col-md-6 form-group">
+            <label>ZIP Code</label>
+            <input class="form-control" required id="zip_code" type="text" placeholder="123">
+        </div><br>
+        <div class="col-12 d-flex justify-content-center" ><br>
+            <input type="submit" value="Submit" id="subBtn"><br>
+        </div>
+      </form>
+      </div>
+     <center>
+      <label for="sign in">already have an account &nbsp</label><a id="Sign in" href="SignIn.html" >Sign in</a>
+    </center>
+    </div>
+    </div>
+<script src="js/Authentication.js">
+</script>
+</body>
+</html>
